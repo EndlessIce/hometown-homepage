@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {   
+    --color-text-light: #FEFAEA;
+    --color-text-dark: #4D3D2D;
+    --color-background-light: #FEFAEA;
+    --color-background-darker: rgba(141, 112, 83, .5);
+    --color-background-dark: #4d3d2d;
+    --color-bg-shadow: rgba(0, 0, 0, .5);
+    --color-shadow: #4D3D2D;
+    --color-spots-card-bar: rgba(77, 61, 45, .85);
+    --color-guide-card-outer: rgba(195, 206, 161, .8);
+    --color-guide-card-inner: rgba(96, 108, 56, .8);
+    --color-cta: #606C38;
+}
+
+
+body {
+    font-family: "Caveat", cursive;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* GENERAL CLASSES */
+.wrapper {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1200px;
+}
+
+.heading {
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    font-size: 48px;
+    color: var(--color-text-dark);
+}
+
+.background-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-shadow);
+    z-index: -5;
+}
+
+.background-color {
+    background-color: var(--color-background-light);
+}
+
+.background-img {
+    background-size: cover;
+    background-position: center;
+}
+
+.section-padding {
+    padding: 80px 10px;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 700px;
+    background-image: url("images/warsaw_1.jpg");
+    z-index: -5;
+}
+
+.hero__textbox {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 0 10px;
+    color: var(--color-text-light);
+}
+
+.hero__h1 {
+    margin: 0;
+    font-size: 64px;
+    animation: fade 2s linear forwards;
+    opacity: 0;
+}
+
+.hero__p {
+    font-size: 40px;
+    opacity: 0;
+    animation: fade 2s 1.5s linear forwards;
+}
+
+.hero__p:last-child {
+    animation: fade 2s 3s linear forwards;
+}
+
+/* SPOTS SECTION */
+.spots__cardbox {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.spots__card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 0 5px var(--color-shadow);
+    border-radius: 20px; 
+    transition: transform .3s;
+}
+
+.spots__card:hover {
+    transform: scale(1.1)
+}
+
+.spots__card--left {
+    background-image: url("images/palace_of_culture_and_science.jpg")
+}
+
+.spots__card--middle {
+    background-image: url("images/old_town.jpg")
+}
+
+.spots__card--right {
+    background-image: url("images/wilanow_palace.jpg")
+}
+
+.spots__textbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-spots-card-bar);
+}
+
+.spots__p {
+    font-size: 24px;
+    color: var(--color-text-light);
+}
+
+/* GUIDE SECTION */
+.guide {
+    position: relative;
+    height: 700px;
+    background-image: url("images/warsaw_2.jpg");
+    background-attachment: fixed;
+    z-index: -5;
+}
+
+.guide .heading {
+    color: var(--color-text-light);
+}
+
+.guide__card {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+    height: 400px;
+    background-color: var(--color-guide-card-outer);
+    border-radius: 20px;
+}
+
+.guide__card-inner {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--color-guide-card-inner);
+    border-radius: 20px;
+}
+
+.guide__img {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.guide__textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 40px;
+    color: var(--color-text-light);
+}
+
+.guide__h3 {
+    font-size: 36px;
+}
+
+.guide__p {
+    font-size: 24px;
+}
+
+/* CONTACT SECTION */
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 800px;
+    background-color: var(--color-background-darker);
+    box-shadow: 0 0 5px var(--color-shadow);
+    border-radius: 20px;
+}
+
+.contact__input {
+    width: 100%;
+    height: 50px;
+    color: var(--color-text-dark);
+}
+
+.contact__input::placeholder {
+    color: var(--color-text-dark);
+}
+
+.contact__textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    color: var(--color-text-dark);
+}
+
+.contact__textarea::placeholder {
+    color: var(--color-text-dark);
+}
+
+.contact__btn {
+    background-color: var(--color-cta);
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.contact__btn:hover {
+    transform: scale(1.1);
+}
+
+.contact-properties {
+    padding: 10px 20px;
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 10px;
+    background-color: var(--color-background-dark);
+}
+
+.footer__p {
+    color: var(--color-text-light);
+    font-size: 36px;
+}
+
+/* ANIMATION */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
